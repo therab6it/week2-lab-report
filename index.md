@@ -153,7 +153,7 @@ If, at any point, you wish to terminate the connection, simple type in `exit` on
 
 Some basic commands are listed below.
 
-* `$cd <path>`&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;: Changes the directory or folder to the specified `<path>`
+* `$cd <path>`               : Changes the directory or folder to the specified `<path>`
 * `$cd ..`                   : Changes the directory to the parent folder
 * `$cd ~`                    : Changes the directory to the root or main folder
 * `$ls`                      : Lists the folders and files present in the current directory
@@ -201,8 +201,8 @@ Once this is done, logging in to the server and typing in `ls` to the terminal d
 ![Image](https://i.ibb.co/B3NbDyP/Screenshot-5.png)
 
 
-> Try this yourself! Here's the code for the WhereAmI.java file.
-   ```
+Try this yourself! Here's the code for the WhereAmI.java file.  
+```
     class WhereAmI {
       public static void main(String[] args) {
         System.out.println(System.getProperty("os.name"));
@@ -211,9 +211,7 @@ Once this is done, logging in to the server and typing in `ls` to the terminal d
         System.out.println(System.getProperty("user.dir"));
       }
     }
-    ```
-
-
+ ```
 
 
 ---
@@ -253,14 +251,18 @@ Logout of the server.
 On your computer, locate the folder in which the public and the private keys are stored; it is the file path you provided earlier. Copy the file path for the **public** key. It should be a file with a *.pub* extension. With the file path copied, run the following command on the terminal on your computer. 
 
 ```
-scp <filepath> cs15lwi22\*\*\*@ieng6.ucsd.edu:~/.ssh/authorized_keys
+scp <filepath> cs15lwi22***@ieng6.ucsd.edu:~/.ssh/authorized_keys
 ```
 
 And you're all set!
 
 ---
 
-## 6. 
+## 6. Optimizing Remote Running
+
+They previous sections had a lot of steps that can actually be condensed into lesser effort to get the job done.
+
+Using an IDE instead of the terminal or Notepad is one of the most basic ways to edit a piece of code. Make sure you use VSCode or other IDEs like IntelliJ. This allows more efficient local editing. Then, using the integrated terminal inside VSCode can help stay better organised with all the required operations taking place inside a single application window. You can also install the **Remote Development** extension on VSCode. Check out this [link](https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host) on how to set it up. This feature displays the files on the server with a graphical interface, which might help many beginners. Once the file is ready to be transferred to and run on the server, you may find it easier to execute all these actions with one line of code, by using double inverted commas (" ") to include any code that is 
 
 
 
