@@ -27,7 +27,7 @@ You're all set!
 If your computer is running Windows, you'd have to download and install a program called OpenSSH.
 
 
-### OpenSSH
+### Installing OpenSSH
 
 There are two ways to install OpenSSH onto your computer. You can either: 
 
@@ -42,7 +42,9 @@ There are two ways to install OpenSSH onto your computer. You can either:
 
 2. Click *Windows + x*, then click *a*. This opens Windows PowerShell as an administrator. First, ensure that OpenSSH hasn't already been installed by running this line of code.
 
-   ```Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'```
+   ```
+   Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+   ```
    
    The output should look like this if niether has been installed.
    
@@ -102,7 +104,9 @@ Keep your account name and password handy for the next step.
 
 Open the terminal in VSCode and type out the following command.
 
-```ssh cs15lwi22***@ieng6.ucsd.edu```
+```
+ssh cs15lwi22***@ieng6.ucsd.edu
+```
 
 Since this is the first time you're connecting to the server, you should see the following.
 
@@ -117,7 +121,7 @@ Type in `yes` and hit enter.
 
 Once you've entered your password (which may sometimes take a few attempts to get through correctly), you would have successfully connected to a computer remotely!
 
-Your screen should look something like this (The '\*\*\*' are a placeholder for your three account-specific characters, like aws or app).
+Your screen should look something like this (The `***` are a placeholder for your three account-specific characters, like aws or app).
 
 ```
 ⤇ ssh cs15lwi22***@ieng6.ucsd.edu
@@ -162,7 +166,7 @@ Some basic commands are listed below.
 
 For more commands, check out this [Hostinger.com](https://www.hostinger.com/tutorials/linux-commands) webpage.
 
-
+---
 
 ## 4. Moving files to the remote server
 
@@ -170,11 +174,13 @@ It is important to know how to send files across to the remote server from your 
 
 First, ensure you are logged out from the server, and the terminal is opened from a folder from your computer. Essentially, ensure the command is run on the *client* computer. Type in the following command.
 
-```scp <filepath> cs15lwi22\*\*\*@ieng6.ucsd.edu:~/```
+```
+scp <filepath> cs15lwi22***@ieng6.ucsd.edu:~/
+```
 
-Once again, the `\*\*\*` is simply a placeholder. You will have to type in your three account-specific characters. This command will copy the file located at `<filepath>`, login to your account on the server, and paste it in the home directory. If you want the file in a specific folder, append the desired directory path to the code. You would have to type your password in when prompted (more on this in the next section).
+Once again, the `***` is simply a placeholder. You will have to type in your three account-specific characters. This command will copy the file located at `<filepath>`, login to your account on the server, and paste it in the home directory. If you want the file in a specific folder, append the desired directory path to the code. You would have to type your password in when prompted (more on this in the next section).
 
-Here is an example. The 'WhereAmI.java' file gets the information of:
+Here is an example to display this. The 'WhereAmI.java' file gets the information of:
   1. Name of the operating system
   2. User name
   3. Home directory
@@ -190,9 +196,24 @@ Using `scp`, the same file can be sent over to the remote server like this.
 ![Image](https://i.ibb.co/BBHtwKq/Screenshot-4.png)
 
 
-Once this is done, logging in to the server and typing in `ls` to the terminal displays the file present. Run the Java file on the server will produce a different set of results.
+Once this is done, logging in to the server and typing in `ls` to the terminal displays the file being present. Running the Java file on the server will produce a different set of results.
 
 ![Image](https://i.ibb.co/B3NbDyP/Screenshot-5.png)
+
+
+> Try this yourself! Here's the code for the WhereAmI.java file.
+
+```
+class WhereAmI {
+  public static void main(String[] args) {
+    System.out.println(System.getProperty("os.name"));
+    System.out.println(System.getProperty("user.name"));
+    System.out.println(System.getProperty("user.home"));
+    System.out.println(System.getProperty("user.dir"));
+  }
+}
+```
+
 
 ---
 
@@ -200,9 +221,11 @@ Once this is done, logging in to the server and typing in `ls` to the terminal d
 
 As you may have noticed, it would be very tedious to enter your password everytime you login from your own computer or when you have to transfer a file. This step can be eliminated using the Secure Shell Protocol (SSH). Using a set of public and private keys encoded using SHA256, SSH enables a secure means to access the server from a trusted client (your computer). Here's how you set it up.
 
-Open the terminal on your computer. Ensure you are *not* logged on to the server yet. Run the following command.
+Open the terminal on your computer. Ensure you are **not** logged on to the server yet. Run the following command.
 
-```ssh-keygen```
+```
+ssh-keygen
+```
 
 You should expect the following output.
 
@@ -228,7 +251,9 @@ Logout of the server.
 
 On your computer, locate the folder in which the public and the private keys are stored; it is the file path you provided earlier. Copy the file path for the **public** key. It should be a file with a *.pub* extension. With the file path copied, run the following command on the terminal on your computer. 
 
-```scp <filepath> cs15lwi22\*\*\*@ieng6.ucsd.edu:~/.ssh/authorized_keys```
+```
+scp <filepath> cs15lwi22\*\*\*@ieng6.ucsd.edu:~/.ssh/authorized_keys
+```
 
 And you're all set!
 
