@@ -102,7 +102,7 @@ Keep your account name and password handy for the next step.
 
 ### Configuring remote access
 
-Open the terminal in VSCode and type out the following command.
+Open the terminal in VSCode and type out the following command. The `***` are a placeholder for your three account-specific characters, like aws or app, so replace them!
 
 ```
 ssh cs15lwi22***@ieng6.ucsd.edu
@@ -113,7 +113,7 @@ Since this is the first time you're connecting to the server, you should see the
 ```
 ⤇ ssh cs15lwi22***@ieng6.ucsd.edu
 The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
-RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
+RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/jxp1wUQcec.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 
@@ -121,7 +121,7 @@ Type in `yes` and hit enter.
 
 Once you've entered your password (which may sometimes take a few attempts to get through correctly), you would have successfully connected to a computer remotely!
 
-Your screen should look something like this (The `***` are a placeholder for your three account-specific characters, like aws or app).
+Your screen should look something like this.
 
 ```
 ⤇ ssh cs15lwi22***@ieng6.ucsd.edu
@@ -152,18 +152,18 @@ If, at any point, you wish to terminate the connection, simple type in `exit` on
 ## 3. Trying Some Commands
 
 Some basic commands are listed below.
-
-* `$cd <path>`                : Changes the directory or folder to the specified `<path>`
-* `$cd ..`                    : Changes the directory to the parent folder
-* `$cd ~`                     : Changes the directory to the root or main folder
-* `$ls`                       : Lists the folders and files present in the current directory
-* `$ls -a`                    : Lists all the folders and files (including the hidden ones) present in the current directory
-* `$cp <file path> <to path>` : Copies the file at `<file path>` and adds it to the `<to path>`
-* `$mkdir <name>`             : Makes a new directory or folder with the specified `<name>`
-* `$rmdir <name>`             : Removes or deletes the directory with the specified `<name>`
-* `$echo <text>`              : Prints the `<text>` to the console
-* `$cat <filename>`           : Prints the contents of the file `<filename>` to the console
-
+<pre>
+* `$cd <path>`               : Changes the directory or folder to the specified `<path>`
+* `$cd ..`                   : Changes the directory to the parent folder
+* `$cd ~`                    : Changes the directory to the root or main folder
+* `$ls`                      : Lists the folders and files present in the current directory
+* `$ls -a`                   : Lists all the folders and files (including the hidden ones) present in the current directory
+* `$cp <filepath> <to path>` : Copies the file at `<file path>` and adds it to the `<to path>`
+* `$mkdir <name>`            : Makes a new directory or folder with the specified `<name>`
+* `$rmdir <name>`            : Removes or deletes the directory with the specified `<name>`
+* `$echo <text>`             : Prints the `<text>` to the console
+* `$cat <filename>`          : Prints the contents of the file `<filename>` to the console
+</pre>
 For more commands, check out this [Hostinger.com](https://www.hostinger.com/tutorials/linux-commands) webpage.
 
 ---
@@ -202,17 +202,18 @@ Once this is done, logging in to the server and typing in `ls` to the terminal d
 
 
 > Try this yourself! Here's the code for the WhereAmI.java file.
+   ```
+    class WhereAmI {
+      public static void main(String[] args) {
+        System.out.println(System.getProperty("os.name"));
+        System.out.println(System.getProperty("user.name"));
+        System.out.println(System.getProperty("user.home"));
+        System.out.println(System.getProperty("user.dir"));
+      }
+    }
+    ```
 
-```
-class WhereAmI {
-  public static void main(String[] args) {
-    System.out.println(System.getProperty("os.name"));
-    System.out.println(System.getProperty("user.name"));
-    System.out.println(System.getProperty("user.home"));
-    System.out.println(System.getProperty("user.dir"));
-  }
-}
-```
+
 
 
 ---
