@@ -262,8 +262,21 @@ And you're all set!
 
 They previous sections had a lot of steps that can actually be condensed into lesser effort to get the job done.
 
-Using an IDE instead of the terminal or Notepad is one of the most basic ways to edit a piece of code. Make sure you use VSCode or other IDEs like IntelliJ. This allows more efficient local editing. Then, using the integrated terminal inside VSCode can help stay better organised with all the required operations taking place inside a single application window. You can also install the **Remote Development** extension on VSCode. Check out this [link](https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host) on how to set it up. This feature displays the files on the server with a graphical interface, which might help many beginners. Once the file is ready to be transferred to and run on the server, you may find it easier to execute all these actions with one line of code, by using double inverted commas (" ") to include any code that is 
+Using an IDE instead of the terminal or Notepad is one of the most basic ways to edit a piece of code. Make sure you use VSCode or other IDEs like IntelliJ. This allows more efficient local editing.   
+Then, using the integrated terminal inside VSCode can help stay better organised with all the required operations taking place inside a single application window. You can also install the **Remote Development** extension on VSCode. Check out this [link](https://code.visualstudio.com/docs/remote/ssh#_connect-to-a-remote-host) on how to set it up. This feature displays the files located on the server, in a graphical interface, which might help many beginners.   
+Once a file is ready to be transferred to and run on the server, you may find it easier to execute all these actions with one line of code, by using double inverted commas (" ") to include any code that is to be run on the server.
 
+For example, with just two lines of code, WhereAmI.java can be sent to the server, complied on the server, and executed on the server as follows.
+
+```
+scp WhereAmI.java cs15lwi22***@ieng6.ucsd.edu:~/
+ssh cs15lwi22***@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
+```
+
+A quick way to access these commands is by using the up arrow key to scroll through all the previously executed commands within that session.   
+
+
+Have fun!   
 
 
 
