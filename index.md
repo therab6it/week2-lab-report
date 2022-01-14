@@ -152,8 +152,8 @@ If, at any point, you wish to terminate the connection, simple type in `exit` on
 ## 3. Trying Some Commands
 
 Some basic commands are listed below.
-<pre>
-* `$cd <path>`               : Changes the directory or folder to the specified `<path>`
+
+* `$cd <path>`&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;: Changes the directory or folder to the specified `<path>`
 * `$cd ..`                   : Changes the directory to the parent folder
 * `$cd ~`                    : Changes the directory to the root or main folder
 * `$ls`                      : Lists the folders and files present in the current directory
@@ -163,7 +163,7 @@ Some basic commands are listed below.
 * `$rmdir <name>`            : Removes or deletes the directory with the specified `<name>`
 * `$echo <text>`             : Prints the `<text>` to the console
 * `$cat <filename>`          : Prints the contents of the file `<filename>` to the console
-</pre>
+
 For more commands, check out this [Hostinger.com](https://www.hostinger.com/tutorials/linux-commands) webpage.
 
 ---
